@@ -1,5 +1,5 @@
 # mise initialization (needs to run early for PATH)
-eval "$($HOME/.local/bin/mise" activate zsh)"
+eval "$($HOME/.local/bin/mise activate zsh)"
 
 # zoxide initialization (affects PATH)
 eval "$(zoxide init zsh)"
