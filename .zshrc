@@ -24,17 +24,31 @@ zi light romkatv/powerlevel10k
 # Source additional configuration files
 [[ -f ~/.zsh_aliases ]] && source ~/.zsh_aliases
 
-# --- TOOL INITIALIZATION (Keep at the bottom) ---
 
-# Safely restore standard paths if zi destroyed them
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin:$PATH"
+# ==============================================================================
+# --- CRITICAL SYSTEM PATH RECOVERY & TOOL INITIALIZATION ---
+# ==============================================================================
 
-# Initialize mise
+# 1. Force rebuild a completely fresh, functional system path array
+path=(
+  /home/codespace/.local/bin
+  /usr/local/bin
+  /usr/bin
+  /bin
+  /usr/local/sbin
+  /usr/sbin
+  /sbin
+  /home/codespace/.zi/polaris/bin
+  $path
+)
+export PATH
+
+# 2. Initialize mise (manages bat, eza, zoxide, etc.)
 if [[ -f "$HOME/.local/bin/mise" ]]; then
   eval "$($HOME/.local/bin/mise activate zsh)"
 fi
 
-# Initialize zoxide
+# 3. Initialize zoxide
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
 fi
