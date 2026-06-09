@@ -1,0 +1,6 @@
+[tools]
+node = "24"
+bat = "latest"
+biome = "latest"
+eza = "latest"
+zoxide = "latest"

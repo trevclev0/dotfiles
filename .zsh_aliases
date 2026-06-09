@@ -1,0 +1,6 @@
+# Tool replacements
+alias cat='bat'
+alias ls='eza'
+alias ll='eza -lh'
+alias la='eza -lah'
+alias tree='eza --tree'
