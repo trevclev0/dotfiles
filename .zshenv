@@ -1,9 +1,16 @@
-# mise initialization (needs to run early for PATH)
-eval "$($HOME/.local/bin/mise activate zsh)"
+# Environment variables
+export EDITOR="vim"
+export LANG="en_US.UTF-8"
 
-# zoxide initialization (affects PATH)
-eval "$(zoxide init zsh)"
+# mise initialization — only if it exists
+if [[ -f "$HOME/.local/bin/mise" ]]; then
+  eval "$($HOME/.local/bin/mise activate zsh)"
+else
+  # Fallback: add common tool paths just in case
+  export PATH="$HOME/.local/bin:$PATH"
+fi
 
-# Export any environment variables
-export EDITOR=vim
-export LANG=en_US.UTF-8
+# zoxide initialization — only if it exists
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
