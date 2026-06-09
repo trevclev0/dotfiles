@@ -28,6 +28,6 @@ ln -sf "$DOTFILES_DIR/.zprofile" ~/.zprofile
 ln -sf "$DOTFILES_DIR/.zshrc" ~/.zshrc
 ln -sf "$DOTFILES_DIR/.zsh_aliases" ~/.zsh_aliases
 ln -sf "$DOTFILES_DIR/.mise.toml" ~/.mise.toml
-ln -sf "$DOTFILES_DIR/.mise.toml" ~/.mise.toml
+ln -sf "$DOTFILES_DIR/.p10k.zsh" ~/.p10k.zsh
 
 echo "Tools installed successfully!"
