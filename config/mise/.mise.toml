@@ -4,3 +4,4 @@ bat = "latest"
 biome = "latest"
 eza = "latest"
 zoxide = "latest"
+ubi = { github = "russmckendrick/aicommit" }
